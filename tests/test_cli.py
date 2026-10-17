@@ -29,10 +29,9 @@ class CliTest(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("not a number", err)
 
-    def test_runtime_errors_exit_1(self) -> None:
-        """Every error after the arguments parse exits 1: division by zero is one."""
+    def test_division_by_zero_exits_2(self) -> None:
         code, _, err = run("div", "1", "0")
-        self.assertEqual(code, 1)
+        self.assertEqual(code, 2)
         self.assertIn("division by zero", err)
 
     def test_bad_usage_exits_2(self) -> None:

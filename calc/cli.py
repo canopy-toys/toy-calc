@@ -4,7 +4,7 @@ import argparse
 import sys
 
 from calc.format import format_result
-from calc.ops import OPERATIONS, CalcError
+from calc.ops import OPERATIONS, CalcError, DivisionByZero
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -18,6 +18,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     try:
         result = OPERATIONS[args.op](a, b)
+    except DivisionByZero as e:
+        print(f"calc: {e}", file=sys.stderr)
+        return 2
     except CalcError as e:
         print(f"calc: {e}", file=sys.stderr)
         return 1
