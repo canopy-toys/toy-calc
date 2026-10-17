@@ -6,3 +6,4 @@
 
 - `add`, `sub`, `mul`, and `div` subcommands.
 - `--precision` to round the result to a number of decimal places.
+- Probe.
