@@ -21,6 +21,12 @@ class CliTest(unittest.TestCase):
     def test_add(self) -> None:
         self.assertEqual(run("add", "2", "3"), (0, "5\n", ""))
 
+    def test_pow(self) -> None:
+        self.assertEqual(run("pow", "2", "10"), (0, "1024\n", ""))
+
+    def test_pow_precision(self) -> None:
+        self.assertEqual(run("--precision", "2", "pow", "2", "-1"), (0, "0.50\n", ""))
+
     def test_precision(self) -> None:
         self.assertEqual(run("--precision", "2", "div", "1", "3"), (0, "0.33\n", ""))
 
