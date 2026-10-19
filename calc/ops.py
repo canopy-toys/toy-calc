@@ -37,8 +37,7 @@ def pow(a: float, b: float) -> float:
 
 OPERATIONS = {
     "add": add,
-    "sub": sub,
-    "mul": mul,
     "div": div,
-    "pow": pow,
+    "mul": mul,
+    "sub": sub,
 }
